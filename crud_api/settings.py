@@ -131,7 +131,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-STATIC_ROOT = os.path.join(BASE_DIR, "client", 'dist')
+STATIC_ROOT = os.path.join(BASE_DIR, "client", "dist")
 
 STATICFILES_DIRS = [
   # Tell Django where to look for React's static files (css, js)
