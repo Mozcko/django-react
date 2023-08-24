@@ -1,12 +1,13 @@
 import axios from "axios";
 
+/*
 const URL =
   process.env.NODE_ENV === "production"
     ? import.meta.env.VITE_BACKEND_URL
-    : "localhost:8000";
+    : "localhost:8000";*/
 
 const taskApi = axios.create({
-  baseURL: `https://web-production-404a.up.railway.app/tasks/api/v1/tasks/`
+  baseURL: 'https://web-production-404a.up.railway.app/tasks/api/v1/tasks/'
 });
 
 export const getAllTasks = () => taskApi.get("/");
