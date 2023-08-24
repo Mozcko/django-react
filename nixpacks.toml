@@ -4,5 +4,5 @@ providers = ["node", "python"]
 NODE_ENV = "production"
 SECRET_KEY = "django-insecure-ud@*yx(aj5%4#wxhb7@p*lwqz4x_5_9abf8zhku$x&4nyc01ld"
 
-[deploy]
-startCommand = "cd client && npm install && npm run build && cd .. && python manage.py migrate && python manage.py collectstatic && gunicorn crud_api.wsgi"
+[phases.build]
+cmds = ["cd client", "npm install", "npm run build", "cd .."]
