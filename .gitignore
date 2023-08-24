@@ -41,7 +41,6 @@ Thumbs.db
 ##########################
 /venv
 /crud_api/__pycache__
-static
 
 # Node Generated Files #
 ########################
