@@ -31,8 +31,7 @@ SECRET_KEY = str(os.environ.get('SECRET_KEY'))
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',
-    'web-production-404a.up.railway.app',
+    "*"
     ]
 
 
@@ -68,7 +67,7 @@ ROOT_URLCONF = 'crud_api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'client', 'dist')],
+        'DIRS': [os.path.join(BASE_DIR, "client", "dist")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +89,9 @@ WSGI_APPLICATION = 'crud_api.wsgi.application'
 DATABASES = {
     #'default': dj_database_url.config(default='postgresql://postgres:bScpTTGd0BdSsS5jpllw@containers-us-west-32.railway.app:7017/railway')
 
-    'default': dj_database_url.config(default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'))
+    "default":
+    dj_database_url.config(default="sqlite:///" +
+                           os.path.join(BASE_DIR, "db.sqlite3"))
 }
 
 
@@ -128,11 +129,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = "static/"
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'client', 'dist'),
+  # Tell Django where to look for React's static files (css, js)
+  os.path.join(BASE_DIR, "client", "dist")
 ]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -145,7 +151,5 @@ CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CSRF_TRUSTED_ORIGINS = ["http://*", "https://web-production-404a.up.railway.app"]
