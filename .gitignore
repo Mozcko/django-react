@@ -25,6 +25,7 @@
 *.log
 *.sql
 *.sqlite
+*.sqlite3
 
 # OS generated files #
 ######################
@@ -40,6 +41,7 @@ Thumbs.db
 ##########################
 /venv
 /crud_api/__pycache__
+static
 
 # Node Generated Files #
 ########################
