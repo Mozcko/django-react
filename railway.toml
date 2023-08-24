@@ -1,0 +1,12 @@
+
+TOML
+
+[build]
+builder = "NIXPACKS"
+nixpacksConfigPath = "nixpacks.toml"
+
+[deploy]
+numReplicas = 1
+startCommand = "python manage.py migrate && gunicorn crud_api.wsgi"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
