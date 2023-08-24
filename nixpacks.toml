@@ -2,3 +2,6 @@ providers = ["node", "python"]
 
 [variables]
 NODE_ENV = "production"
+
+[phases.build]
+cmds = ["cd client", "npm install", "npm run build", "cd .."]
