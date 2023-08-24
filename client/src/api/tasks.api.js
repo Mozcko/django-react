@@ -6,7 +6,7 @@ const URL =
     : "http://localhost:8000";
 
 const taskApi = axios.create({
-  baseURL: `${URL}/tasks/api/v1/tasks/`
+  baseURL: `https://web-production-404a.up.railway.app/tasks/api/v1/tasks/`
 });
 
 export const getAllTasks = () => taskApi.get("/");
