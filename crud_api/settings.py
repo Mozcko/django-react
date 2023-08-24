@@ -89,6 +89,10 @@ WSGI_APPLICATION = 'crud_api.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(default='sqlite://db.sqlite3')
+    #'default': {
+    #    'ENGINE': 'django.db.backends.postgresql',
+    #    'NAME': '',
+    #}
 }
 
 
